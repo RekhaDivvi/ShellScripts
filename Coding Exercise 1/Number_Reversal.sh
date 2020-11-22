@@ -16,6 +16,7 @@ fi
 
 
 #Alternate method
+: '
 #!/bin/bash
 input="$1"
 len=${#input}
@@ -29,7 +30,7 @@ then
 else
 	echo "Error! Please provide command line arguments"
 fi
-
+'
 
 
 #Using while loop
