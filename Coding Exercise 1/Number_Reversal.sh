@@ -2,7 +2,6 @@
 
 #Storing command line paramenters in an array
 arr=$@
-
 #Validating if the script is executed with command line parameters or not
 if [ $# -ne 0 ]
 then
@@ -16,8 +15,24 @@ else
 fi
 
 
+#Alternate method
+#!/bin/bash
+input="$1"
+len=${#input}
+if [ $# -ne 0 ]
+then
+	for (( i=$len-1; i>=0; i-- )) 
+	do 
+		rev="$rev${input:$i:1}" 
+	done 
+	echo "$rev"
+else
+	echo "Error! Please provide command line arguments"
+fi
 
-#Alternate method using while loop
+
+
+#Using while loop
 : '
 arr=$@
 if [ $# -ne 0 ]
