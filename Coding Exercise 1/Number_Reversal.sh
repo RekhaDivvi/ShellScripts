@@ -13,8 +13,11 @@ then
                 NUMBER=$n
                 while [ $NUMBER -gt 0 ]
                 do
+#last digit of the number is obtained by using the modulus operator and stored in REM variable.
                         REM=`expr $NUMBER % 10`
+#Get each digit of the number and store the reversed number in REV_NUM variable.
                         REV_NUM=`expr $REV_NUM \* 10 + $REM`
+#The last digit is then removed by dividing the number with 10
                         NUMBER=`expr $NUMBER / 10`
                 done
                 echo "Reverse of $n is: " $REV_NUM
